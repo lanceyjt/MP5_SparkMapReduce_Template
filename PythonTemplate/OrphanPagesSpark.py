@@ -9,9 +9,11 @@ sc = SparkContext(conf=conf)
 lines = sc.textFile(sys.argv[1], 1) 
 lines_lst = lines.collect()
 
+print("testing 1")
+
 #TODO
 sources_set = set()
-dests_set = {}
+dests_set =set()
 
 for line in lines_lst:
   # TODO
@@ -23,8 +25,10 @@ for line in lines_lst:
   for dest in dests:
     if source != dest:
         dests_set.add(source)
+        
+print("testing 2")
 
-orphan_pages = list(sources.difference(dests))
+orphan_pages = list(sources_set.difference(dests_set))
 orphan_pages = [int(x) for x in orphan_pages]
 orphan_pages.sort()
 
