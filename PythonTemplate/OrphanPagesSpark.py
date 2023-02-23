@@ -6,6 +6,8 @@ conf = SparkConf().setMaster("local").setAppName("OrphanPages")
 conf.set("spark.driver.bindAddress", "127.0.0.1")
 sc = SparkContext(conf=conf)
 
+print("testing 0")
+
 lines = sc.textFile(sys.argv[1], 1) 
 lines_lst = lines.collect()
 
@@ -25,7 +27,7 @@ for line in lines_lst:
   for dest in dests:
     if source != dest:
         dests_set.add(source)
-        
+
 print("testing 2")
 
 orphan_pages = list(sources_set.difference(dests_set))
