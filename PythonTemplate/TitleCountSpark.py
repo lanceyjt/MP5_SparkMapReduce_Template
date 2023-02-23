@@ -40,10 +40,12 @@ for line in line_list:
 word_freq = list(word_count.items())
 word_freq.sort(reverse=False, key=lambda x: (x[1], x[0]))
 
+print("Word freq[-10]", word_freq[-10])
+
 top_pairs = []
 for p in word_freq[-10:]:
     top_pairs.append([list(p)])
-    
+
 for x in top_pairs:
     x[1] = str(x[1])
 
