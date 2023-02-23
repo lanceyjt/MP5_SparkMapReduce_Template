@@ -40,7 +40,7 @@ for line in line_list:
 word_freq = list(word_count.items())
 word_freq.sort(reverse=False, key=lambda x: (x[1], x[0]))
 
-output_lines = ["\t".join(x) for x in x in word_freq[-10:]]
+output_lines = ["\t".join(x) for x in word_freq[-10:]]
 result = "\n".join(output_lines)
 
 outputFile = open(sys.argv[4],"w")
