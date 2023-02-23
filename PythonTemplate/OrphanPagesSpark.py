@@ -6,12 +6,12 @@ conf = SparkConf().setMaster("local").setAppName("OrphanPages")
 conf.set("spark.driver.bindAddress", "127.0.0.1")
 sc = SparkContext(conf=conf)
 
-print("testing 0")
+#print("testing 0")
 
 lines = sc.textFile(sys.argv[1], 100) 
 lines_lst = lines.collect()
 
-print("testing 1")
+#print("testing 1")
 
 #TODO
 sources_set = set()
@@ -28,13 +28,14 @@ for line in lines_lst:
     if source != dest:
         dests_set.add(dest)
 
-print("testing 2")
+#print("testing 2")
 
 orphan_pages = list(sources_set.difference(dests_set))
 orphan_pages = [int(x) for x in orphan_pages]
 orphan_pages.sort()
+orphan_pages = [str(x) for x in orphan_pages]
 
-print("orphan_pages[:10]", orphan_pages[:10])
+#print("orphan_pages[:10]", orphan_pages[:10])
 
 output = open(sys.argv[2], "w")
 
