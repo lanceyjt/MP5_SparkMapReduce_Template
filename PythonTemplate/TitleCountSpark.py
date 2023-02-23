@@ -42,7 +42,7 @@ word_freq.sort(reverse=False, key=lambda x: (x[1], x[0]))
 
 top_pairs = word_freq[-10:]
 for (w, c) in top_pairs:
-    top_pairs[c] = str(c)
+    top_pairs[1] = str(c)
 
 output_lines = ["\t".join(x) for x in top_pairs]
 result = "\n".join(output_lines)
