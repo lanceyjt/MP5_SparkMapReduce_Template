@@ -26,13 +26,15 @@ for line in lines_lst:
   sources_set.add(source)
   for dest in dests:
     if source != dest:
-        dests_set.add(source)
+        dests_set.add(dest)
 
 print("testing 2")
 
 orphan_pages = list(sources_set.difference(dests_set))
 orphan_pages = [int(x) for x in orphan_pages]
 orphan_pages.sort()
+
+print("orphan_pages[:10]", orphan_pages[:10])
 
 output = open(sys.argv[2], "w")
 
