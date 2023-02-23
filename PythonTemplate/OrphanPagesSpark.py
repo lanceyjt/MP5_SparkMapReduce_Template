@@ -8,7 +8,7 @@ sc = SparkContext(conf=conf)
 
 print("testing 0")
 
-lines = sc.textFile(sys.argv[1], 1) 
+lines = sc.textFile(sys.argv[1], 100) 
 lines_lst = lines.collect()
 
 print("testing 1")
