@@ -25,15 +25,15 @@ for line in lines_lst:
   dests = [x.strip() for x in dest.strip().split(' ') if x.strip()!='']
   sources_set.add(source)
   for dest in dests:
-    if source != dest:
-        dests_set.add(dest)
-
+    #if source != dest:
+    #    dests_set.add(dest)
+    dests_set.add(dest)
+    
 #print("testing 2")
 
 orphan_pages = list(sources_set.difference(dests_set))
-orphan_pages = [int(x) for x in orphan_pages]
-orphan_pages.sort()
 orphan_pages = [str(x) for x in orphan_pages]
+orphan_pages.sort()
 
 #print("orphan_pages[:10]", orphan_pages[:10])
 
