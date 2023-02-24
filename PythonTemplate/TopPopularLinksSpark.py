@@ -31,6 +31,7 @@ output = open(sys.argv[2], "w")
 #TODO
 #write results to output file. Foramt for each line: (key + \t + value +"\n")
 output.write(result)
+output.write("\n")
 output.close()
 
 sc.stop()

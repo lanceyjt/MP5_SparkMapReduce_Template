@@ -42,6 +42,7 @@ output = open(sys.argv[2], "w")
 #TODO
 #write results to output file. Foramt for each line: (line + "\n")
 output.write("\n".join(orphan_pages))
+output.write("\n")
 output.close()
 sc.stop()
 
