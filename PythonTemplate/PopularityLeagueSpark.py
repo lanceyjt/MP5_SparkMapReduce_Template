@@ -8,7 +8,7 @@ conf = SparkConf().setMaster("local").setAppName("PopularityLeague")
 conf.set("spark.driver.bindAddress", "127.0.0.1")
 sc = SparkContext(conf=conf)
 
-lines = sc.textFile(sys.argv[1], 1) 
+lines = sc.textFile(sys.argv[1], 100) 
 
 #TODO
 lines_lst = lines.collect()
