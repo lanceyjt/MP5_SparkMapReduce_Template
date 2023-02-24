@@ -43,7 +43,7 @@ for i in range(len(diff)):
 
 pages = [x[0] for x in league_freq_lst]
 page_rank = list(zip(pages, ranks))
-page_rank.sort(reverse=True, key=lambda x: x[0])
+page_rank.sort(reverse=False, key=lambda x: x[0])
 
 
 output = open(sys.argv[3], "w")
