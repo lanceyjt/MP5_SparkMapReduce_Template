@@ -23,7 +23,9 @@ for line in lines_lst:
 page_freq_lst = list(page_freq.items())
 page_freq_lst.sort(reverse=False, key=lambda x: (x[1], x[0]))
 
-output_lines = ["{page}\t{count}".format(page=x[0], count=x[1]) for x in page_freq_lst[-10:]]
+top_link_freq = page_freq_lst[-10:]
+top_link_freq.sort(key=lambda x: str(x[0]))
+output_lines = ["{page}\t{count}".format(page=x[0], count=x[1]) for x in top_link_freq]
 result = "\n".join(output_lines)
 
 output = open(sys.argv[2], "w")
